@@ -1,0 +1,18 @@
+{
+  "name": "fengxuguang.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fengxuguang/fengxuguang.github.io.git",
+  "author": "fengxuguang",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "vuepress": "^1.9.9",
+    "vuepress-theme-reco": "^1.6.17"
+  }
+}
