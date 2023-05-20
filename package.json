@@ -11,8 +11,18 @@
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.4",
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
+    "@vuepress/plugin-nprogress": "^1.9.9",
     "vuepress": "^1.9.9",
+    "vuepress-plugin-cursor-effects": "^1.1.6",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-meting": "^0.3.3",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3",
     "vuepress-theme-reco": "^1.6.17"
+  },
+  "dependencies": {
+    "cnpm": "^9.1.0",
+    "vuepress-plugin-comment": "^0.7.3"
   }
 }

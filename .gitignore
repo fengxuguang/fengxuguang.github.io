@@ -2,3 +2,4 @@
 /yarn.lock
 /package-lock.json
 /.idea/
+/docs/.vuepress/dist/
