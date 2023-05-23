@@ -1,7 +1,7 @@
 ---
 home: true # 是否使用Vuepress默认主题
 # navbar: false   # 不显示导航栏
-heroImage: /hero.jpg
+# heroImage: /hero.jpg
 heroImageStyle: {
 #   maxHeight: '120px',
   maxWidth: 100%,

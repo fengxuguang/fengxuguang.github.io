@@ -13,11 +13,18 @@ module.exports = {
     theme: 'reco',
     themeConfig: {
         logo: '/head.jpg',  // 导航栏 Logo
+        sidebar: 'auto',
         // 导航栏
         nav: [
             {
                 text: 'java技术',
-                link: '/modules/java/'
+                link: '/modules/java/',
+                items: [
+                    {
+                        text: 'Lombok',
+                        link: '/modules/java/lombok/'
+                    }
+                ]
             },
             {
                 text: 'springboot',
