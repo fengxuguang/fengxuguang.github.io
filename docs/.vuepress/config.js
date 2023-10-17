@@ -1,7 +1,7 @@
 module.exports = {
     base: '/',
-    title: '阿飞个人技术博客',
-    description: '个人博客记录',
+    title: '冯旭光个人技术博客',
+    description: '阿飞个人博客记录',
     port: 9999,
     // 标签 icon
     // head: [
@@ -33,6 +33,16 @@ module.exports = {
             {
                 text: '微服务',
                 link: '/modules/springcloud/'
+            },
+            {
+                text: '工具',
+                link: 'modules/tools',
+                items: [
+                    {
+                        text: 'IDEA',
+                        link: '/module/tools/idea'
+                    }
+                ]
             }
         ],
         // 博客配置
