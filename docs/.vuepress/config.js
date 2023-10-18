@@ -40,7 +40,7 @@ module.exports = {
                 items: [
                     {
                         text: 'IDEA',
-                        link: '/module/tools/idea/'
+                        link: '/modules/tools/idea/'
                     }
                 ]
             }
