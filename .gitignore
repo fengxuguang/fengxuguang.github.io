@@ -5,3 +5,5 @@
 /docs/.vuepress/dist/
 /docs/.vuepress/dist/categories/index.html
 /docs/.vuepress/dist/tag/index.html
+/docs/.vuepress/nav/
+/docs/.vuepress/plugin
