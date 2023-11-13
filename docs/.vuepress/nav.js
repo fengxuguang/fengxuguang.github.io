@@ -1,17 +1,21 @@
+const springboot = require('./pathDir/springboot')
+const java = require('./pathDir/java')
+const tools = require('./pathDir/tools')
+
 module.exports = [
      {
          text: 'java技术',
-         link: '/modules/java/',
+         link: java.root,
          items: [
              {
                  text: 'Lombok',
-                 link: '/modules/java/lombok/'
+                 link: java.lombok
              }
          ]
      },
      {
          text: 'springboot',
-         link: '/modules/springboot/'
+         link: springboot.root
      },
      {
          text: '微服务',
@@ -19,11 +23,11 @@ module.exports = [
      },
      {
          text: '工具',
-         link: 'modules/tools',
+         link: tools.root,
          items: [
              {
                  text: 'IDEA快捷键',
-                 link: '/modules/tools/idea/'
+                 link: tools.idea
              }
          ]
      }
