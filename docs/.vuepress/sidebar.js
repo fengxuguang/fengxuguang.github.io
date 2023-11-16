@@ -7,15 +7,20 @@ const tools = require('./pathDir/tools')
 const springboot = require('./pathDir/springboot')
 
 module.exports = {
-    "/modules/tools": [
+    "/modules/tools/": [
         {
             title: 'IDEA快捷键',
             path: tools.idea
         }
     ],
-    "/modules/springboot": [
+    "/modules/springboot/": [
         {
             title: 'SpringBootApplication注解',
+            path: springboot.SpringBootApplication
+        },
+        {
+            title: "SpringBootConfiguration注解",
+            path: springboot.SpringBootConfiguration
             path: springboot.SpringBootApplication
         }
     ],
