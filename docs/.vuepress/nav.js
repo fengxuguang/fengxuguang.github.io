@@ -1,6 +1,8 @@
 const springboot = require('./pathDir/springboot')
 const java = require('./pathDir/java')
 const tools = require('./pathDir/tools')
+const docker = require('./pathDir/docker')
+const springcloud = require('./pathDir/springcloud')
 
 module.exports = [
      {
@@ -19,7 +21,11 @@ module.exports = [
      },
      {
          text: '微服务',
-         link: '/modules/springcloud/'
+         link: springcloud.root
+     },
+     {
+        text: 'Docker',
+        link: docker.root
      },
      {
          text: '工具',
