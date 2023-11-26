@@ -1,3 +1,7 @@
+/**
+ * 界面顶部栏配置
+ */
+
 const springboot = require('./pathDir/springboot')
 const java = require('./pathDir/java')
 const tools = require('./pathDir/tools')
