@@ -26,8 +26,6 @@ docker run [容器名/containerID]
 ```
 该命令会从本地、Docker Hub 中搜索指定的镜像，并下载到本地，创建一个容器并启动该容器。
 
-
-
 ### 4. 查看所有运行中的容器
 
 列出所有运行中的容器。
@@ -42,8 +40,6 @@ docker ps
 docker ps -a
 ```
 
-
-
 ### 5. 重启容器
 
 要重启一个运行中的容器。
@@ -52,9 +48,17 @@ docker ps -a
 docker restart [容器名/containerID]
 ```
 
+### 6. 查看容器日志
 
+```shell
+docker log -f [容器名/containerID]
+```
 
-### 6. 查看 Docker 信息
+选项：
+
+- -f：可选，滚动刷新日志信息。
+
+### 7. 查看 Docker 信息
 
 查看 Docker 版本。
 
@@ -97,7 +101,7 @@ Server: Docker Engine - Community
 
 
 
-### 7. 查看 docker 系统的信息
+### 8. 查看 docker 系统的信息
 
 ```she
 docker info
