@@ -22,9 +22,13 @@ docker stop [容器名/containerID]
 ### 3. 运行容器
 要创建和运行容器使用 **run** 命令。
 ```shell
-docker run [容器名/containerID]
+docker run [-d] [容器名/containerID]
 ```
 该命令会从本地、Docker Hub 中搜索指定的镜像，并下载到本地，创建一个容器并启动该容器。
+
+选项：
+
+- -d：为可选项，表示以后台方式启动。
 
 ### 4. 查看所有运行中的容器
 
@@ -58,7 +62,17 @@ docker log -f [容器名/containerID]
 
 - -f：可选，滚动刷新日志信息。
 
-### 7. 查看 Docker 信息
+### 7. 进入容器
+
+容器启动后，要进入容器内部。
+
+~~~shell
+docker exec -it [容器名/containerID] /bin/[bash | sh]
+~~~
+
+
+
+### 8. 查看 Docker 信息
 
 查看 Docker 版本。
 
@@ -101,7 +115,7 @@ Server: Docker Engine - Community
 
 
 
-### 8. 查看 docker 系统的信息
+### 9. 查看 docker 系统的信息
 
 ```she
 docker info
@@ -181,14 +195,22 @@ REPOSITORY      TAG      IMAGE ID       CREATED         SIZE
 拉取 Docker 仓库中该镜像的最新版本。
 
 ```shell
-docker images pull [镜像名]
+docker images pull [镜像名[:TAG]]
 ```
+
+如果不显示地指定 TAG，则默认会选择 latest 标签，即下载仓库中最新版本的镜像。
 
 ### 3. 搜索镜像
 
 ```shell
 docker search [镜像名]
 ```
+
+选项：
+
+- --automated=false，仅显示自动创建的镜像
+- --on-trunc=false，输出信息不截断显示
+- -s, --stars=0，指定仅显示评价为指定星级以上的镜像。
 
 Docker Hub 官方地址：[Docker Hub](https://hub.docker.com/)
 
