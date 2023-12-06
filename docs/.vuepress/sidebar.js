@@ -21,7 +21,6 @@ module.exports = {
         {
             title: "SpringBootConfiguration注解",
             path: springboot.SpringBootConfiguration
-            path: springboot.SpringBootApplication
         }
     ],
     "/modules/docker": [
