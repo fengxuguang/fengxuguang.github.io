@@ -8,6 +8,7 @@ const tools = require('./pathDir/tools')
 const docker = require('./pathDir/docker')
 const springcloud = require('./pathDir/springcloud')
 const go = require('./pathDir/go')
+const gin = require('./pathDir/gin')
 
 module.exports = [
      {
@@ -35,6 +36,10 @@ module.exports = [
      {
         text: 'Go',
         link: go.root
+     },
+     {
+        text: 'Gin框架',
+        link: gin.root
      },
      {
         text: 'Docker',

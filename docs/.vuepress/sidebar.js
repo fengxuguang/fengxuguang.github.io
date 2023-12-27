@@ -6,6 +6,7 @@ const java = require('./pathDir/java')
 const docker = require('./pathDir/docker')
 const tools = require('./pathDir/tools')
 const springboot = require('./pathDir/springboot')
+const gin = require('./pathDir/gin')
 
 module.exports = {
     "/modules/java/": [
@@ -42,6 +43,20 @@ module.exports = {
         {
             title: 'Docker命令',
             path: docker.Command
+        }
+    ],
+    "/modules/gin": [
+        {
+            title: 'Gin框架介绍',
+            path: gin.root
+        },
+        {
+            title: 'Gin编写HelloWorld',
+            path: gin.helloworld
+        },
+        {
+            title: 'Gin响应',
+            path: gin.response
         }
     ]
 }
