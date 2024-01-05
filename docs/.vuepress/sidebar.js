@@ -17,7 +17,11 @@ module.exports = {
         {
             title: 'JDK17新特性',
             path: java.jdk17_feature
-        }
+        },
+        {
+            title: '动态Druid连接池',
+            path: java.dynamic_druid
+        },
     ],
     "/modules/tools/": [
         {

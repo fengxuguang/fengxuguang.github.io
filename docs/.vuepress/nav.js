@@ -9,6 +9,7 @@ const docker = require('./pathDir/docker')
 const springcloud = require('./pathDir/springcloud')
 const go = require('./pathDir/go')
 const gin = require('./pathDir/gin')
+const leetcode = require('./pathDir/leetcode')
 
 module.exports = [
      {
@@ -44,6 +45,10 @@ module.exports = [
      {
         text: 'Docker',
         link: docker.root
+     },
+     {
+        text: '算法',
+        link: leetcode.root
      },
      {
          text: '工具',
