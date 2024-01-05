@@ -244,5 +244,90 @@ public class ConnectionPoolUtil {
     }
 
 }
-
 ```
+
+### 扩展知识
+1. `ContainerLinkedHashMap`继承`LinkedHashMap`后重写`removeEldestEntry`方法的原因。
+```Java
+public class LinkedHashMap<K,V>
+    extends HashMap<K,V>
+    implements Map<K,V>
+{
+    // 省略...
+} 
+```
+解释：由于`LinkedHashMap`继承`HashMap`，`LinkedHashMap`在调用`put`方法时，实际是调用`HashMap`的`put`方法，`HashMap`的`put`方法源码如下：
+
+~~~java
+public class HashMap<K,V> extends AbstractMap<K,V>
+    implements Map<K,V>, Cloneable, Serializable {
+    
+    public V put(K key, V value) {
+        return putVal(hash(key), key, value, false, true);
+    }
+
+    final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+        // 省略...
+        ++modCount;
+        if (++size > threshold)
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
+
+    void afterNodeInsertion(boolean evict) { }
+}
+~~~
+
+看源码可知，调用`put`方法后接着去调用`putVal`方法，在将数据插入到`HashMap`后，会调用`afterNodeInsertion`方法，默认`HashMap`对此方法不做处理。但是`LinkedHashMap`对`afterNodeInsertion`此方法进行了处理，源码如下：
+
+~~~java
+public class LinkedHashMap<K,V>
+    extends HashMap<K,V>
+    implements Map<K,V>
+{
+
+    void afterNodeInsertion(boolean evict) { // possibly remove eldest
+        LinkedHashMap.Entry<K,V> first;
+        if (evict && (first = head) != null && removeEldestEntry(first)) {
+            K key = first.key;
+            removeNode(hash(key), key, null, false, true);
+        }
+    }
+    
+    protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
+        return false;
+    }
+}
+~~~
+
+在`afterNodeInsertion`方法内会调用`removeEldestEntry`方法来判断是否删除链表头数据，默认`LinkedHashMap`的`removeEldestEntry`返回`false`，表示不移除链表头元素。
+
+`ContainerLinkedHashMap`继承`LinkedHashMap`后，可以对`removeEldestEntry`方法进行重新，根据链表内的容量来判断是否需要删除链表头元素，以达到控制链表容量的目的。
+
+ps：`removeEldestEntry`方法在`LinkedHashMap`调用时传入的参数为链表的头元素。
+
+源码如下：
+
+~~~java
+private static class ContainerLinkedHashMap extends LinkedHashMap<DbSourceKey, DruidDataSource> {
+
+    /**
+     * 链接最大容量
+     */
+    private final int maxSize;
+        
+    @Override
+    protected boolean removeEldestEntry(Map.Entry<DbSourceKey, DruidDataSource> eldest) {
+        // 超过最大容量, 需要移除旧的数据
+        if (containers.size() > maxSize) {
+            DruidDataSource druidDataSource = eldest.getValue();
+            druidDataSource.close();
+        }
+    
+        return containers.size() > maxSize;
+    }
+}
+~~~
+
