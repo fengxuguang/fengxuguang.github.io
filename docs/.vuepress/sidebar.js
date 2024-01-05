@@ -7,6 +7,7 @@ const docker = require('./pathDir/docker')
 const tools = require('./pathDir/tools')
 const springboot = require('./pathDir/springboot')
 const gin = require('./pathDir/gin')
+const leetcode = require('./pathDir/leetcode')
 
 module.exports = {
     "/modules/java/": [
@@ -48,6 +49,40 @@ module.exports = {
             title: 'Docker命令',
             path: docker.Command
         }
+    ],
+    "/modules/leetcode": [
+        {
+            title: '1.两数之和【简单】',
+            path: leetcode.sum_of_two_number
+        },
+        {
+            title: '2.两数相加【中等】',
+            path: leetcode.add_two_number_together
+        },
+        {
+            title: '3.无重复字符的最长子串【中等】',
+            path: leetcode.the_longest_string_without_repeating_characters
+        },
+        {
+            title: '5.最长回文子串【中等】',
+            path: leetcode.the_longest_return_substring
+        },
+        {
+            title: '7.整数反转【中等】',
+            path: leetcode.integer_inversion
+        },
+        {
+            title: '9.回文数【简单】',
+            path: leetcode.palindromic_number
+        },
+        {
+            title: '13.罗马数字转整数【简单】',
+            path: leetcode.roman_numerals_to_whole_numbers
+        },
+        {
+            title: '20.有效的括号【简单】',
+            path: leetcode.valid_bracket
+        },
     ],
     "/modules/gin": [
         {
