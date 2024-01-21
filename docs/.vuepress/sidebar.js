@@ -83,6 +83,10 @@ module.exports = {
             title: '20.有效的括号【简单】',
             path: leetcode.valid_bracket
         },
+        {
+            title: '33.搜索旋转排序数组【中等】',
+            path: leetcode.search_rotationally_sorted_array
+        }
     ],
     "/modules/gin": [
         {

@@ -12,6 +12,7 @@
  const integer_inversion = root + '整数反转'
  const palindromic_number = root + '回文数'
  const roman_numerals_to_whole_numbers = root + '罗马数字转整数'
+ const search_rotationally_sorted_array = "搜索旋转排序数组"
 
  module.exports = {
     root,
@@ -23,4 +24,5 @@
     integer_inversion,
     palindromic_number,
     roman_numerals_to_whole_numbers,
+    search_rotationally_sorted_array,
  }
